@@ -3,7 +3,8 @@ const mailControl = document.getElementById(`mailInput`);
 const btnConferma = document.querySelector(`.btnConferma`);
 
 const mailValide = [".ugodeughi", ".boolean"];
-const mailValideLength = mailValide.length;
+
+console.log(`Lunghezza array ${mailValide.length}`);
 
 btnConferma.addEventListener('click',function() 
 { 
@@ -11,8 +12,8 @@ btnConferma.addEventListener('click',function()
 
     let mailConfirmed = false;
 
-    for (i = 0; i < mailValideLength; i++) {
-        if (mailControl.value.includes(mailValideLength[i])) {
+    for (i = 0; i < mailValide.length; i++) {
+        if (mailControl.value.includes(mailValide[i])) {
             alert("E-mail confermata");
             mailConfirmed = true;
         } 
