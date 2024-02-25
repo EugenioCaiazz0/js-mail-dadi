@@ -22,7 +22,6 @@ btnConferma.addEventListener('click',function()
     if (mailConfirmed == false) {
         alert("Errore, dati inseriti non validi");
     }
-
     /* 
     let i = 0;
     while (i < mailValideLength) {
@@ -34,5 +33,41 @@ btnConferma.addEventListener('click',function()
         }
     } 
     */
+
+})
+
+
+/*DICE ROLL SNACK*/
+
+const btnDice = document.querySelector(`.btnDice`);
+
+btnDice.addEventListener('click',function()
+{
+    let playerRoll;
+    let houseRoll;
+
+    playerRoll = Math.ceil(Math.random() * 6);
+    houseRoll = Math.ceil(Math.random() * 6);
+
+   
+    console.log("Il giocatore ottiene " + playerRoll);
+    console.log("La casa ottiene " + houseRoll);
+
+    document.getElementById('diceResult').innerHTML = 
+    ` <p>Il giocatore ottiene ${playerRoll} </p> `;
+    
+    document.getElementById('diceResult').innerHTML = 
+    ` <p>La casa ottiene ${houseRoll} </p> `;
+
+    if ( playerRoll > houseRoll) {
+        document.getElementById('diceResult').innerHTML = 
+    ` <p>Hai vinto, complimenti! </p> `;
+    } else if (playerRoll < houseRoll) {
+        document.getElementById('diceResult').innerHTML = 
+        ` <p>Hai perso, ritenta! </p> `;
+    } else if (playerRoll == houseRoll) {
+        document.getElementById('diceResult').innerHTML = 
+        ` <p>Hai pareggiato, ritira i dadi! </p> `;
+    }
 
 })
